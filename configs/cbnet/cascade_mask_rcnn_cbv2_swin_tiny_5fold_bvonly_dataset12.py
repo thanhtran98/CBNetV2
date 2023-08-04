@@ -80,7 +80,8 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(1600, 1400),
+        # img_scale=(1600, 1400),
+        img_scale=[(480, 1333), (640, 1333), (800, 1333)],
         flip=True,
         transforms=[
             dict(type='Resize', keep_ratio=True),
@@ -95,7 +96,7 @@ test_pipeline = [
 # Modify dataset related settings
 dataset_type = 'COCODataset'
 classes = ('blood_vessel',)
-data_root='/cbnetv2/hubmap_hv'
+data_root='/mmdetection/hubmap_hv'
 fold = 0
 
 data = dict(
@@ -124,4 +125,4 @@ data = dict(
 )
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
-load_from = '/cbnetv2/hubmap_hv/pretrained/cbnetv2/cascade_mask_rcnn_cbv2_swin_tiny_patch4_window7_mstrain_480-800_adamw_3x_coco.pth'
+load_from = '/mmdetection/hubmap_hv/pretrained/cbnetv2/cascade_mask_rcnn_cbv2_swin_tiny_patch4_window7_mstrain_480-800_adamw_3x_coco.pth'

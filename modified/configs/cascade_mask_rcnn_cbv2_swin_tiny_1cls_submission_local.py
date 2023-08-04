@@ -80,7 +80,9 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(1600, 1400),
+        # img_scale=(1600, 1400),
+        img_scale=(640, 1333),
+        # img_scale=[(480, 1333), (640, 1333), (800, 1333)],
         flip=True,
         transforms=[
             dict(type='Resize', keep_ratio=True),
@@ -112,14 +114,14 @@ data = dict(
         img_prefix='hubmap-hacking-the-human-vasculature/train',
         classes=classes,
         ann_file=f'repos/coco_label/bv_only_dataset12_5fold/val_fold{fold}.json',
-        # pipeline=test_pipeline,
+        pipeline=test_pipeline,
         ),
     test=dict(
         data_root=data_root,
         img_prefix='hubmap-hacking-the-human-vasculature/train',
         classes=classes,
         ann_file=f'repos/coco_label/bv_only_dataset12_5fold/val_fold{fold}.json',
-        # pipeline=test_pipeline,
+        pipeline=test_pipeline,
     )
 )
 

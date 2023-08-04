@@ -1,5 +1,5 @@
 _base_ = [
-    '/kaggle/input/hubmap-hhv-packages/cbnetv2/cbnetv2/configs/cbnet/cascade_mask_rcnn_cbv2_swin_tiny_patch4_window7_mstrain_480-800_adamw_3x_coco.py'
+    '/kaggle/input/hubmap-hhv-packages/CBNetV2/CBNetV2/configs/cbnet/cascade_mask_rcnn_cbv2_swin_tiny_patch4_window7_mstrain_480-800_adamw_3x_coco.py'
 ]
 
 # We also need to change the num_classes in head to match the dataset's annotation
